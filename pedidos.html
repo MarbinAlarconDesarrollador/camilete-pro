@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacer Pedido - CAMILETE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme">
+    <div class="accessibility-panel" role="complementary">
+        <button class="fab-acc" onclick="changeFontSize(2)">A+</button>
+        <button class="fab-acc" onclick="changeFontSize(-2)">A-</button>
+        <button class="fab-acc" onclick="toggleContrast()">🌓</button>
+        <button class="fab-acc" id="voiceBtn" onclick="toggleVoice()">🔊</button>
+    </div>
+
+    <button class="fab-up" id="btnUp" onclick="window.scrollTo(0,0)">⬆</button>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="./img/logo.png" alt="Logo Camilete" class="logo-img">
+            </a>
+
+            <div class="nav-back-container">
+                <a href="index.html" class="btn-back">
+                    <span class="back-icon">←</span> <span class="back-text">INICIO</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-container">
+        <h2 class="section-title brush-title">Arma tu Pedido</h2>
+
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="filtrarCategoria('Todos')">Todos</button>
+            <button class="tab-btn" onclick="filtrarCategoria('Hamburguesa')">Burgers</button>
+            <button class="tab-btn" onclick="filtrarCategoria('Perros')">Perros</button>
+            <button class="tab-btn" onclick="filtrarCategoria('Papas locas')">Papas</button>
+            <button class="tab-btn" onclick="filtrarCategoria('Bebidas')">Bebidas</button>
+            <button class="tab-btn" onclick="filtrarCategoria('Carnes y pollo')">Carnes</button>
+        </div>
+
+        <div class="order-layout">
+            <div id="menuContainer" class="menu-grid"></div>
+
+            <div class="sticky-cart">
+                <div class="order-box-vertical">
+                    <h3>Tu Pedido 🛒</h3>
+                    <div id="cartList" class="cart-scroll">
+                        <p class="empty-cart">Añade productos para comenzar...</p>
+                    </div>
+                    <div class="total-bar">
+                        <span>Total:</span>
+                        <span id="totalValue">$0</span>
+                    </div>
+                    <form id="orderForm">
+                        <input type="text" id="custName" placeholder="Tu nombre" required>
+                        <select id="custSede" required>
+                            <option value="">¿A qué sede pides?</option>
+                            <option value="la_rioja">Sede 1 - La Rioja</option>
+                            <option value="san_antonio">Sede 2 - San Antonio</option>
+                        </select>
+                        <input type="text" id="custAddr" placeholder="Dirección de entrega" required>
+                        <textarea id="custNotes" placeholder="Notas adicionales"></textarea>
+                        <button type="button" class="btn-wa" onclick="sendWhatsApp()">ENVIAR POR WHATSAPP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-counter-fab" id="cartFab"
+        onclick="document.querySelector('.sticky-cart').scrollIntoView({behavior:'smooth'})">
+        <span id="cartCount">0</span>🛒
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

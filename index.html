@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMILETE - Sabor Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e63946">
+</head>
+
+<body>
+
+    <div class="accessibility-panel" role="complementary">
+        <button class="fab-acc" onclick="changeFontSize(2)">A+</button>
+        <button class="fab-acc" onclick="changeFontSize(-2)">A-</button>
+        <button class="fab-acc" onclick="toggleContrast()">🌓</button>
+        <button class="fab-acc" id="voiceBtn" onclick="toggleVoice()">🔊</button>
+    </div>
+
+    <button class="fab-up" id="btnUp" onclick="window.scrollTo(0,0)">⬆</button>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="./img/logo.png" alt="Logo Camilete" class="logo-img">
+            </a>
+
+            <button class="hamburger" id="menuToggle">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
+                <li><a href="#historia" onclick="closeMenu()">Historia</a></li>
+                <li><a href="pedidos.html" style="color: var(--primary); font-weight: 800;">ORDENAR AQUÍ</a></li>
+                <li><a href="#ubicaciones" onclick="closeMenu()">Sedes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Sabor que te hace volver</h2>
+            <p>Artesanía en cada mordida, directo a tu corazón.</p>
+            <a href="pedidos.html" class="btn-hero">VER MENÚ COMPLETO</a>
+        </div>
+    </header>
+
+    <section id="historia" class="section-container">
+        <div class="history-grid">
+            <div class="history-text">
+                <h2 class="section-title left">Nuestra Historia</h2>
+                <p>En <strong>Camilete</strong>, seleccionamos cada ingrediente para garantizar una experiencia premium
+                    desde una pequeña cocina local.</p>
+            </div>
+            <div class="history-img">
+                <img src="https://images.unsplash.com/photo-1550950158-d0d960dff51b?w=800" alt="Cocinero">
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="section-container bg-light">
+        <h2 class="section-title">Nuestra Carta</h2>
+        <p style="text-align: center; margin-bottom: 50px; font-style: italic; opacity: 0.8;">Insumos frescos de alta
+            calidad para paladares exigentes.</p>
+
+        <div class="elegant-menu-grid">
+            <div class="menu-category">
+                <h3 class="category-name">Hamburguesas</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-title">Camilete XL</span>
+                        <span class="item-price">$28k</span>
+                    </div>
+                    <p class="item-description">Carne Angus 150g, queso cheddar fundido, tocino crocante, cebolla
+                        caramelizada y pan brioche artesanal.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-title">Blue Cheese Burger</span>
+                        <span class="item-price">$30k</span>
+                    </div>
+                    <p class="item-description">Reducción de frutos rojos, queso azul, rúcula fresca y carne de res
+                        premium.</p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-name">Hot Dogs</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-title">Perro Especial</span>
+                        <span class="item-price">$18k</span>
+                    </div>
+                    <p class="item-description">Salchicha alemana, lluvia de papas hilo, queso costeño rallado y nuestra
+                        famosa salsa Camilete.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-title">Mexican Dog</span>
+                        <span class="item-price">$20k</span>
+                    </div>
+                    <p class="item-description">Chiles jalapeños, pico de gallo, guacamole casero y nachos triturados.
+                    </p>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-name">Papas Locas</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-title">Papas Camilete</span>
+                        <span class="item-price">$12k</span>
+                    </div>
+                    <p class="item-description">Corte grueso, bañadas en queso cheddar líquido, trozos de tocineta y
+                        cebollín fresco.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="pedidos.html" class="btn-hero-minimal">ABRIR MENÚ COMPLETO Y PEDIR</a>
+        </div>
+    </section>
+    <section id="ubicaciones" class="section-container bg-light reveal">
+        <h2 class="section-title brush-title">Encuéntranos</h2>
+        <div class="maps-grid">
+            <div class="map-card">
+                <h3>Sede 1 - La Rioja</h3>
+                <p>Cra 15 # 2N- 50 local 5<br>Zona Refrescante, Piedecuesta</p>
+                <div class="map-frame">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.713915152345!2d-73.0531586!3d7.006456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f3e1b3b3b3b%3A0x1b3b3b3b3b3b3b3b!2sCra.%2015%20%232n-50%2C%20Piedecuesta%2C%20Santander!5e0!3m2!1ses!2sco!4v1714000000000"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Cra+15+%23+2N-+50+local+5+La+rioja+Piedecuesta+Santander"
+                    target="_blank" class="map-link-btn">ABRIR EN GOOGLE MAPS / WAZE</a>
+            </div>
+
+            <div class="map-card">
+                <h3>Sede 2 - San Antonio</h3>
+                <p>Calle 9 #13-70<br>San Antonio, Piedecuesta</p>
+                <div class="map-frame">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.754321!2d-73.048987!3d6.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f2a1b1b1b1b%3A0x2b2b2b2b2b2b2b2b!2sCl.%209%20%2313-70%2C%20Piedecuesta%2C%20Santander!5e0!3m2!1ses!2sco!4v1714000000000"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=calle+9+%2313-70+San+Antonio+Piedecuesta+Santander"
+                    target="_blank" class="map-link-btn">ABRIR EN GOOGLE MAPS / WAZE</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-logo">CAMILETE</p>
+        <p>© 2026 Restaurante Camilete - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
